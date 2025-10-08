@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://thriftmeds.com/sitemap.xml
+
+# Disallow private areas
+Disallow: /dashboard
+Disallow: /api/
+
+# Allow important pages for SEO
+Allow: /search
+Allow: /about
+Allow: /contact
+Allow: /legal
+Allow: /compliance
+Allow: /press
+Allow: /privacy-policy
+Allow: /terms-of-service
+Allow: /medical-disclaimer

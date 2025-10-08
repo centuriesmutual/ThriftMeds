@@ -67,21 +67,21 @@ export default function HomePage() {
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
           <div className="text-center">
-            <h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-6 sm:mb-8 text-white leading-tight">
-              Find Affordable
-              <span className="block text-white">Medications</span>
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 lg:mb-16 max-w-4xl mx-auto text-green-100 leading-relaxed px-4">
-              Search our comprehensive database of medications and speak with licensed brokers 
-              for instant pricing information. Save money on your prescriptions today.
-            </p>
+                   <h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-6 sm:mb-8 text-white leading-tight">
+                     Medicare Part D
+                     <span className="block text-white">Prescription Drug Plans</span>
+                   </h1>
+                   <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 lg:mb-16 max-w-4xl mx-auto text-green-100 leading-relaxed px-4">
+                     Find affordable Medicare Part D prescription drug coverage and healthcare insurance plans. 
+                     Licensed Medicare brokers help you compare prescription drug costs and save on medications with Medicare Advantage plans.
+                   </p>
             
             {/* Main Search - Mobile Optimized */}
             <div className="max-w-4xl mx-auto mb-8 sm:mb-12 px-4">
               <form onSubmit={handleSearch} className="relative">
                 <input
                   type="text"
-                  placeholder="Enter medication name (e.g., Lipitor, Metformin)..."
+                  placeholder="Search Medicare Part D covered medications (e.g., Lipitor, Metformin, Insulin)..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-4 sm:pl-8 pr-16 sm:pr-20 py-4 sm:py-5 text-lg sm:text-xl rounded-2xl text-primary-black focus:ring-4 focus:ring-white/30 focus:outline-none shadow-clean-lg"
@@ -105,10 +105,11 @@ export default function HomePage() {
                 <PhoneIcon className="h-6 w-6 sm:h-7 sm:w-7" />
                 <span>Call (800) 631-MEDS</span>
               </button>
-              <div className="text-center">
-                <div className="text-sm sm:text-base text-green-100 font-medium">Available 7 days a week</div>
-                <div className="font-semibold text-base sm:text-lg">Mon-Fri: 8AM-8PM • Sat-Sun: 9AM-6PM</div>
-              </div>
+                     <div className="text-center">
+                       <div className="text-sm sm:text-base text-green-100 font-medium">Licensed Medicare Brokers Available 7 days a week</div>
+                       <div className="font-semibold text-base sm:text-lg">Mon-Fri: 8AM-8PM • Sat-Sun: 9AM-6PM</div>
+                       <div className="text-xs sm:text-sm text-green-200 mt-2">Medicare Part D enrollment assistance • CMS approved plans</div>
+                     </div>
             </div>
           </div>
         </div>
@@ -159,33 +160,31 @@ export default function HomePage() {
                 <div className="bg-primary-green/10 rounded-2xl p-4 sm:p-6 w-16 h-16 sm:w-20 sm:h-20 mx-auto lg:mx-0 mb-6 sm:mb-8 flex items-center justify-center">
                   <CurrencyDollarIcon className="h-8 w-8 sm:h-10 sm:w-10 text-primary-green" />
                 </div>
-                <h3 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-8 text-primary-black">
-                  Affordable Pricing
-                </h3>
-                <p className="text-primary-gray leading-relaxed text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0">
-                  Get competitive pricing on prescription medications. Our comprehensive database 
-                  helps you find the most cost-effective options for your healthcare needs. We work 
-                  with a network of licensed pharmacies to ensure you get the best possible prices 
-                  without compromising on quality or safety. Our pricing comparison tools help you 
-                  save significantly on both brand-name and generic medications, making healthcare 
-                  more accessible for everyone.
-                </p>
+                       <h3 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-8 text-primary-black">
+                         Medicare Part D Drug Plans
+                       </h3>
+                       <p className="text-primary-gray leading-relaxed text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0">
+                         Compare Medicare Part D prescription drug plans and find affordable coverage for your medications. 
+                         Our licensed Medicare brokers help you navigate the coverage gap, deductibles, and copay structures 
+                         to maximize your prescription drug benefits. We work with CMS-approved Medicare Advantage and Part D 
+                         plans to ensure you get the best possible coverage while minimizing out-of-pocket costs.
+                       </p>
               </div>
               <div className="bg-white rounded-2xl p-8 shadow-clean-lg">
                 <div className="text-center">
-                  <h4 className="font-heading font-semibold text-2xl mb-6 text-primary-black">Savings Examples</h4>
+                  <h4 className="font-heading font-semibold text-2xl mb-6 text-primary-black">Medicare Part D Coverage</h4>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="font-medium">Lipitor 20mg</span>
-                      <span className="text-primary-green font-bold">Save up to 80%</span>
+                      <span className="font-medium">Lipitor 20mg - Tier 2</span>
+                      <span className="text-primary-green font-bold">$25 copay</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="font-medium">Metformin 500mg</span>
-                      <span className="text-primary-green font-bold">Save up to 70%</span>
+                      <span className="font-medium">Metformin 500mg - Tier 1</span>
+                      <span className="text-primary-green font-bold">$5 copay</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="font-medium">Amoxicillin 500mg</span>
-                      <span className="text-primary-green font-bold">Save up to 85%</span>
+                      <span className="font-medium">Insulin - Tier 3</span>
+                      <span className="text-primary-green font-bold">$47 copay</span>
                     </div>
                   </div>
                 </div>
@@ -225,18 +224,16 @@ export default function HomePage() {
                 <div className="bg-primary-green/10 rounded-2xl p-4 sm:p-6 w-16 h-16 sm:w-20 sm:h-20 mx-auto lg:mx-0 mb-6 sm:mb-8 flex items-center justify-center">
                   <ClockIcon className="h-8 w-8 sm:h-10 sm:w-10 text-primary-green" />
                 </div>
-                <h3 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-8 text-primary-black">
-                  Instant Information
-                </h3>
-                <p className="text-primary-gray leading-relaxed text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0">
-                  Call our hotline for immediate pricing information. No waiting, 
-                  no complicated forms - just quick, reliable pricing data. Our licensed 
-                  brokers are available 7 days a week to provide instant quotes on any 
-                  medication in our database. Whether you're looking for a specific brand 
-                  or generic alternative, our team can help you find the most cost-effective 
-                  options within minutes. We understand that time is valuable when it comes 
-                  to healthcare decisions.
-                </p>
+                       <h3 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-8 text-primary-black">
+                         Medicare Enrollment Support
+                       </h3>
+                       <p className="text-primary-gray leading-relaxed text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0">
+                         Get instant Medicare Part D enrollment assistance from licensed insurance brokers. 
+                         Our Medicare specialists help you understand plan formularies, coverage gaps, and 
+                         catastrophic coverage thresholds. We provide real-time quotes for Medicare Advantage 
+                         and Part D plans, helping you make informed decisions during open enrollment periods. 
+                         Our CMS-approved brokers are available 7 days a week to guide you through Medicare eligibility and plan selection.
+                       </p>
               </div>
             </div>
           </div>
@@ -250,37 +247,35 @@ export default function HomePage() {
                 <div className="bg-primary-green/10 rounded-2xl p-4 sm:p-6 w-16 h-16 sm:w-20 sm:h-20 mx-auto lg:mx-0 mb-6 sm:mb-8 flex items-center justify-center">
                   <ShieldCheckIcon className="h-8 w-8 sm:h-10 sm:w-10 text-primary-green" />
                 </div>
-                <h3 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-8 text-primary-black">
-                  Trusted & Reliable
-                </h3>
-                <p className="text-primary-gray leading-relaxed text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0">
-                  Our comprehensive database includes verified medication information 
-                  to help you make informed decisions about your healthcare. We are CMS 
-                  approved and work exclusively with licensed pharmacies and certified 
-                  brokers to ensure the highest standards of safety and reliability. 
-                  Every medication in our database is thoroughly verified, and our team 
-                  of healthcare professionals is committed to providing accurate, up-to-date 
-                  information. Your health and safety are our top priorities.
-                </p>
+                       <h3 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-8 text-primary-black">
+                         CMS Approved Medicare Plans
+                       </h3>
+                       <p className="text-primary-gray leading-relaxed text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0">
+                         We are CMS approved and work exclusively with licensed Medicare Advantage and Part D plan providers 
+                         to ensure compliance with federal healthcare regulations. Our Medicare brokers are certified and 
+                         trained to help you navigate the complex world of prescription drug coverage, formularies, and 
+                         Medicare eligibility requirements. Every plan we offer meets CMS standards for Medicare beneficiaries, 
+                         ensuring you receive reliable, government-approved prescription drug coverage.
+                       </p>
               </div>
               <div className="bg-white rounded-2xl p-8 shadow-clean-lg">
                 <div className="text-center">
-                  <h4 className="font-heading font-semibold text-2xl mb-6 text-primary-black">Certifications & Approvals</h4>
+                  <h4 className="font-heading font-semibold text-2xl mb-6 text-primary-black">Medicare Certifications</h4>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="font-medium">CMS Approved</span>
+                      <span className="font-medium">CMS Approved Plans</span>
                       <span className="text-primary-green font-bold">✓ Verified</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="font-medium">Licensed Brokers</span>
+                      <span className="font-medium">Licensed Medicare Brokers</span>
                       <span className="text-primary-green font-bold">✓ Certified</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="font-medium">Pharmacy Network</span>
+                      <span className="font-medium">Medicare Part D Network</span>
                       <span className="text-primary-green font-bold">✓ Licensed</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="font-medium">Data Security</span>
+                      <span className="font-medium">HIPAA Compliant</span>
                       <span className="text-primary-green font-bold">✓ Protected</span>
                     </div>
                   </div>

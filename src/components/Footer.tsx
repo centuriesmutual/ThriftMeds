@@ -13,13 +13,13 @@ export default function Footer() {
                 <span className="font-heading font-bold text-2xl">TM</span>
               </div>
               <div>
-                <h3 className="font-heading font-bold text-3xl">ThriftMeds</h3>
-                <p className="text-gray-300 font-medium">Affordable Medications</p>
+                     <h3 className="font-heading font-bold text-3xl">ThriftMeds</h3>
+                     <p className="text-gray-300 font-medium">Medicare Part D Plans</p>
               </div>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              Your trusted partner in finding affordable medications. Search our database 
-              and call our hotline for instant pricing information on prescription drugs.
+              Your trusted partner in finding affordable Medicare Part D prescription drug plans. 
+              Compare Medicare Advantage and Part D coverage options with licensed insurance brokers.
             </p>
             <div className="flex items-center space-x-3 text-primary-lightGreen">
               <PhoneIcon className="h-6 w-6" />

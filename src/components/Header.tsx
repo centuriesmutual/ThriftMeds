@@ -44,8 +44,8 @@ export default function Header() {
               <span className="font-heading font-bold text-xl sm:text-2xl">TM</span>
             </div>
             <div>
-              <h1 className="font-heading font-bold text-2xl sm:text-3xl text-primary-black">ThriftMeds</h1>
-              <p className="text-xs sm:text-sm text-primary-gray font-medium">Affordable Medications</p>
+                     <h1 className="font-heading font-bold text-2xl sm:text-3xl text-primary-black">ThriftMeds</h1>
+                     <p className="text-xs sm:text-sm text-primary-gray font-medium">Medicare Part D Plans</p>
             </div>
           </Link>
 
@@ -55,7 +55,7 @@ export default function Header() {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Search for medications..."
+                  placeholder="Search Medicare Part D covered medications..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-4 pr-12 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-green focus:border-transparent shadow-clean"
@@ -101,13 +101,13 @@ export default function Header() {
         <div className="md:hidden pb-4">
           <form onSubmit={handleSearch}>
             <div className="relative">
-              <input
-                type="text"
-                placeholder="Search for medications..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-4 pr-12 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-green focus:border-transparent shadow-clean"
-              />
+                <input
+                  type="text"
+                  placeholder="Search Medicare Part D covered medications..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-4 pr-12 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-green focus:border-transparent shadow-clean"
+                />
               <button
                 type="submit"
                 className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary-green text-white p-2 rounded-lg hover:bg-primary-lightGreen shadow-clean"
