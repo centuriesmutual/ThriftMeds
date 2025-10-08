@@ -38,6 +38,10 @@ export default function ContactPage() {
     window.location.href = '/login'
   }
 
+  const handleCallHotline = () => {
+    window.open('tel:8006316337', '_self')
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { MagnifyingGlassIcon, PhoneIcon, FilterIcon, UserIcon } from '@heroicons/react/24/outline'
+import { MagnifyingGlassIcon, PhoneIcon, FunnelIcon, UserIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
 interface Medication {
