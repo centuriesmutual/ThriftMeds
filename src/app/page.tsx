@@ -1,0 +1,296 @@
+'use client'
+
+import { useState } from 'react'
+import { MagnifyingGlassIcon, PhoneIcon, ShieldCheckIcon, ClockIcon, CurrencyDollarIcon, UserIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
+
+interface Medication {
+  id: string
+  name: string
+  genericName?: string
+  category: string
+}
+
+export default function HomePage() {
+  const [searchQuery, setSearchQuery] = useState('')
+  const [searchResults, setSearchResults] = useState<Medication[]>([])
+  const [isSearching, setIsSearching] = useState(false)
+
+  // Mock medication database
+  const mockMedications: Medication[] = [
+    { id: '1', name: 'Lipitor', genericName: 'Atorvastatin', category: 'Cholesterol' },
+    { id: '2', name: 'Metformin', category: 'Diabetes' },
+    { id: '3', name: 'Lisinopril', category: 'Blood Pressure' },
+    { id: '4', name: 'Amlodipine', category: 'Blood Pressure' },
+    { id: '5', name: 'Omeprazole', category: 'Acid Reflux' },
+    { id: '6', name: 'Simvastatin', category: 'Cholesterol' },
+    { id: '7', name: 'Losartan', category: 'Blood Pressure' },
+    { id: '8', name: 'Albuterol', category: 'Asthma' },
+    { id: '9', name: 'Gabapentin', category: 'Pain Management' },
+    { id: '10', name: 'Hydrochlorothiazide', category: 'Blood Pressure' },
+  ]
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSearching(true)
+    
+    // Simulate search delay
+    setTimeout(() => {
+      const results = mockMedications.filter(med => 
+        med.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        med.genericName?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        med.category.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+      setSearchResults(results)
+      setIsSearching(false)
+    }, 1000)
+  }
+
+  const handleCallHotline = () => {
+    window.location.href = '/login'
+  }
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section - Professional medical background */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-green/90 via-primary-green/85 to-primary-lightGreen/90">
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='1920' height='1080' viewBox='0 0 1920 1080' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1920' height='1080' fill='%23F0F9FF'/%3E%3Cpath d='M0 540L80 500L160 560L240 480L320 520L400 580L480 540L560 600L640 520L720 580L800 540L880 600L960 520L1040 580L1120 540L1200 600L1280 520L1360 580L1440 540L1520 600L1600 520L1680 580L1760 540L1840 600L1920 520V1080H0V540Z' fill='%23E0F2FE' opacity='0.5'/%3E%3Ccircle cx='200' cy='200' r='100' fill='%23BAE6FD' opacity='0.3'/%3E%3Ccircle cx='1720' cy='300' r='150' fill='%23BAE6FD' opacity='0.2'/%3E%3Ccircle cx='400' cy='800' r='120' fill='%23BAE6FD' opacity='0.25'/%3E%3Ccircle cx='1500' cy='900' r='80' fill='%23BAE6FD' opacity='0.3'/%3E%3C/svg%3E")`
+            }}
+          />
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+          <div className="text-center">
+            <h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-6 sm:mb-8 text-white leading-tight">
+              Find Affordable
+              <span className="block text-white">Medications</span>
+            </h1>
+            <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 lg:mb-16 max-w-4xl mx-auto text-green-100 leading-relaxed px-4">
+              Search our comprehensive database of medications and speak with licensed brokers 
+              for instant pricing information. Save money on your prescriptions today.
+            </p>
+            
+            {/* Main Search - Mobile Optimized */}
+            <div className="max-w-4xl mx-auto mb-8 sm:mb-12 px-4">
+              <form onSubmit={handleSearch} className="relative">
+                <input
+                  type="text"
+                  placeholder="Enter medication name (e.g., Lipitor, Metformin)..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-4 sm:pl-8 pr-16 sm:pr-20 py-4 sm:py-5 text-lg sm:text-xl rounded-2xl text-primary-black focus:ring-4 focus:ring-white/30 focus:outline-none shadow-clean-lg"
+                />
+                <button
+                  type="submit"
+                  disabled={isSearching}
+                  className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 bg-white text-primary-green p-3 sm:p-4 rounded-xl hover:bg-gray-50 disabled:opacity-50 shadow-clean"
+                >
+                  <MagnifyingGlassIcon className="h-5 w-5 sm:h-7 sm:w-7" />
+                </button>
+              </form>
+            </div>
+
+            {/* Call to Action - Mobile Optimized */}
+            <div className="flex flex-col gap-6 sm:gap-8 justify-center items-center px-4">
+              <button
+                onClick={handleCallHotline}
+                className="bg-white text-primary-green px-6 sm:px-10 py-4 sm:py-5 rounded-2xl font-semibold text-lg sm:text-xl hover:bg-gray-50 flex items-center space-x-3 sm:space-x-4 shadow-clean-lg w-full sm:w-auto max-w-sm"
+              >
+                <PhoneIcon className="h-6 w-6 sm:h-7 sm:w-7" />
+                <span>Call (800) 631-MEDS</span>
+              </button>
+              <div className="text-center">
+                <div className="text-sm sm:text-base text-green-100 font-medium">Available 7 days a week</div>
+                <div className="font-semibold text-base sm:text-lg">Mon-Fri: 8AM-8PM • Sat-Sun: 9AM-6PM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Search Results - Mobile Optimized */}
+      {searchResults.length > 0 && (
+        <section className="py-8 sm:py-12 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-heading font-bold text-2xl sm:text-3xl text-center mb-6 sm:mb-8 text-primary-black">
+              Search Results
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              {searchResults.map((medication) => (
+                <div key={medication.id} className="bg-white rounded-xl shadow-clean p-4 sm:p-6 hover:shadow-clean-lg transition-shadow">
+                  <h3 className="font-heading font-semibold text-lg sm:text-xl text-primary-black mb-2">
+                    {medication.name}
+                  </h3>
+                  {medication.genericName && (
+                    <p className="text-primary-gray mb-2 text-sm sm:text-base">
+                      Generic: {medication.genericName}
+                    </p>
+                  )}
+                  <p className="text-xs sm:text-sm text-primary-gray mb-4">
+                    Category: {medication.category}
+                  </p>
+                  <button
+                    onClick={handleCallHotline}
+                    className="w-full btn-primary flex items-center justify-center space-x-2 shadow-clean text-sm sm:text-base py-2 sm:py-3"
+                  >
+                    <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+                    <span>Get Pricing</span>
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Features Section - Full Page Stacked */}
+      <section className="bg-white">
+        {/* Affordable Pricing Section */}
+        <div className="min-h-screen flex items-center bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              <div className="text-center lg:text-left">
+                <div className="bg-primary-green/10 rounded-2xl p-4 sm:p-6 w-16 h-16 sm:w-20 sm:h-20 mx-auto lg:mx-0 mb-6 sm:mb-8 flex items-center justify-center">
+                  <CurrencyDollarIcon className="h-8 w-8 sm:h-10 sm:w-10 text-primary-green" />
+                </div>
+                <h3 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-8 text-primary-black">
+                  Affordable Pricing
+                </h3>
+                <p className="text-primary-gray leading-relaxed text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0">
+                  Get competitive pricing on prescription medications. Our comprehensive database 
+                  helps you find the most cost-effective options for your healthcare needs. We work 
+                  with a network of licensed pharmacies to ensure you get the best possible prices 
+                  without compromising on quality or safety. Our pricing comparison tools help you 
+                  save significantly on both brand-name and generic medications, making healthcare 
+                  more accessible for everyone.
+                </p>
+              </div>
+              <div className="bg-white rounded-2xl p-8 shadow-clean-lg">
+                <div className="text-center">
+                  <h4 className="font-heading font-semibold text-2xl mb-6 text-primary-black">Savings Examples</h4>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                      <span className="font-medium">Lipitor 20mg</span>
+                      <span className="text-primary-green font-bold">Save up to 80%</span>
+                    </div>
+                    <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                      <span className="font-medium">Metformin 500mg</span>
+                      <span className="text-primary-green font-bold">Save up to 70%</span>
+                    </div>
+                    <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                      <span className="font-medium">Amoxicillin 500mg</span>
+                      <span className="text-primary-green font-bold">Save up to 85%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Instant Information Section */}
+        <div className="min-h-screen flex items-center bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              <div className="bg-gray-50 rounded-2xl p-8 shadow-clean-lg order-2 lg:order-1">
+                <div className="text-center">
+                  <h4 className="font-heading font-semibold text-2xl mb-6 text-primary-black">Available Hours</h4>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center p-4 bg-white rounded-lg">
+                      <span className="font-medium">Monday - Friday</span>
+                      <span className="text-primary-green font-bold">8:00 AM - 8:00 PM</span>
+                    </div>
+                    <div className="flex justify-between items-center p-4 bg-white rounded-lg">
+                      <span className="font-medium">Saturday - Sunday</span>
+                      <span className="text-primary-green font-bold">9:00 AM - 6:00 PM</span>
+                    </div>
+                    <div className="text-center mt-6">
+                      <button
+                        onClick={handleCallHotline}
+                        className="btn-primary text-lg px-8 py-4 shadow-clean"
+                      >
+                        Call (800) 631-MEDS
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="text-center lg:text-left order-1 lg:order-2">
+                <div className="bg-primary-green/10 rounded-2xl p-4 sm:p-6 w-16 h-16 sm:w-20 sm:h-20 mx-auto lg:mx-0 mb-6 sm:mb-8 flex items-center justify-center">
+                  <ClockIcon className="h-8 w-8 sm:h-10 sm:w-10 text-primary-green" />
+                </div>
+                <h3 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-8 text-primary-black">
+                  Instant Information
+                </h3>
+                <p className="text-primary-gray leading-relaxed text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0">
+                  Call our hotline for immediate pricing information. No waiting, 
+                  no complicated forms - just quick, reliable pricing data. Our licensed 
+                  brokers are available 7 days a week to provide instant quotes on any 
+                  medication in our database. Whether you're looking for a specific brand 
+                  or generic alternative, our team can help you find the most cost-effective 
+                  options within minutes. We understand that time is valuable when it comes 
+                  to healthcare decisions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Trusted & Reliable Section */}
+        <div className="min-h-screen flex items-center bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              <div className="text-center lg:text-left">
+                <div className="bg-primary-green/10 rounded-2xl p-4 sm:p-6 w-16 h-16 sm:w-20 sm:h-20 mx-auto lg:mx-0 mb-6 sm:mb-8 flex items-center justify-center">
+                  <ShieldCheckIcon className="h-8 w-8 sm:h-10 sm:w-10 text-primary-green" />
+                </div>
+                <h3 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-8 text-primary-black">
+                  Trusted & Reliable
+                </h3>
+                <p className="text-primary-gray leading-relaxed text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0">
+                  Our comprehensive database includes verified medication information 
+                  to help you make informed decisions about your healthcare. We are CMS 
+                  approved and work exclusively with licensed pharmacies and certified 
+                  brokers to ensure the highest standards of safety and reliability. 
+                  Every medication in our database is thoroughly verified, and our team 
+                  of healthcare professionals is committed to providing accurate, up-to-date 
+                  information. Your health and safety are our top priorities.
+                </p>
+              </div>
+              <div className="bg-white rounded-2xl p-8 shadow-clean-lg">
+                <div className="text-center">
+                  <h4 className="font-heading font-semibold text-2xl mb-6 text-primary-black">Certifications & Approvals</h4>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                      <span className="font-medium">CMS Approved</span>
+                      <span className="text-primary-green font-bold">✓ Verified</span>
+                    </div>
+                    <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                      <span className="font-medium">Licensed Brokers</span>
+                      <span className="text-primary-green font-bold">✓ Certified</span>
+                    </div>
+                    <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                      <span className="font-medium">Pharmacy Network</span>
+                      <span className="text-primary-green font-bold">✓ Licensed</span>
+                    </div>
+                    <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                      <span className="font-medium">Data Security</span>
+                      <span className="text-primary-green font-bold">✓ Protected</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  )
+}
