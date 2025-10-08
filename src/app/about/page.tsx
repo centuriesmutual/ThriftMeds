@@ -1,3 +1,5 @@
+'use client'
+
 import { PhoneIcon, ShieldCheckIcon, ClockIcon, CurrencyDollarIcon, HeartIcon, UserIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 

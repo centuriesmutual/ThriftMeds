@@ -17,24 +17,32 @@ import {
 export default function DashboardPage() {
   const [userEmail, setUserEmail] = useState('')
   const [activeTab, setActiveTab] = useState('dashboard')
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const router = useRouter()
 
   useEffect(() => {
-    // Check if user is logged in
-    const isLoggedIn = localStorage.getItem('isLoggedIn')
-    const email = localStorage.getItem('userEmail')
-    
-    if (!isLoggedIn) {
-      router.push('/login')
-      return
+    // Check if user is logged in - only on client side
+    if (typeof window !== 'undefined') {
+      const loggedIn = localStorage.getItem('isLoggedIn')
+      const email = localStorage.getItem('userEmail')
+      
+      if (!loggedIn) {
+        router.push('/login')
+        return
+      }
+      
+      setIsLoggedIn(true)
+      setUserEmail(email || '')
     }
-    
-    setUserEmail(email || '')
+    setIsLoading(false)
   }, [router])
 
   const handleLogout = () => {
-    localStorage.removeItem('isLoggedIn')
-    localStorage.removeItem('userEmail')
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('isLoggedIn')
+      localStorage.removeItem('userEmail')
+    }
     router.push('/')
   }
 
@@ -42,8 +50,20 @@ export default function DashboardPage() {
     router.push('/login')
   }
 
+  // Show loading state during hydration
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-green mx-auto"></div>
+          <p className="mt-2 text-gray-600">Loading...</p>
+        </div>
+      </div>
+    )
+  }
+
   // If not logged in, show login redirect
-  if (!localStorage.getItem('isLoggedIn')) {
+  if (!isLoggedIn) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
