@@ -37,8 +37,9 @@ export default function Header() {
 
       {/* Main header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-3 sm:py-4">
-          {/* Logo - Clean Target-style */}
+        {/* Desktop Layout */}
+        <div className="hidden md:flex justify-between items-center py-3 sm:py-4">
+          {/* Logo - Desktop */}
           <Link href="/" className="flex items-center space-x-2 sm:space-x-4">
             <div className="relative w-14 h-14 sm:w-16 sm:h-16">
               <Image
@@ -56,7 +57,7 @@ export default function Header() {
           </Link>
 
           {/* Search Bar - Desktop */}
-          <div className="hidden md:flex flex-1 max-w-2xl mx-8">
+          <div className="flex flex-1 max-w-2xl mx-8">
             <form onSubmit={handleSearch} className="w-full">
               <div className="relative">
                 <input
@@ -76,8 +77,8 @@ export default function Header() {
             </form>
           </div>
 
-          {/* Call to Action - Clean and professional */}
-          <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
+          {/* Call to Action - Desktop */}
+          <div className="flex items-center space-x-4 lg:space-x-6">
             <div className="text-right">
               <div className="text-xs lg:text-sm text-primary-gray font-medium">CMS Approved</div>
               <div className="font-semibold text-primary-black text-sm lg:text-base">
@@ -91,21 +92,39 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile search - Horizontal next to logo */}
-        <div className="md:hidden pb-4 flex items-center space-x-3">
+        {/* Mobile Layout - Horizontal Logo and Search */}
+        <div className="md:hidden flex items-center space-x-3 py-3 sm:py-4">
+          {/* Logo - Mobile */}
+          <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
+            <div className="relative w-12 h-12">
+              <Image
+                src="/assets/logos/thriftlogo.png"
+                alt="ThriftMeds Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            <div className="hidden xs:block">
+              <h1 className="font-heading font-bold text-lg text-primary-black">ThriftMeds</h1>
+              <p className="text-xs text-primary-gray font-medium">Medicare Part D Plans</p>
+            </div>
+          </Link>
+
+          {/* Search Bar - Mobile - Side by side with logo */}
           <div className="flex-1">
             <form onSubmit={handleSearch}>
               <div className="relative">
-                  <input
-                    type="text"
-                    placeholder="Search medications..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-4 pr-12 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-green focus:border-transparent shadow-clean"
-                  />
+                <input
+                  type="text"
+                  placeholder="Search medications..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-4 pr-12 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-green focus:border-transparent shadow-clean"
+                />
                 <button
                   type="submit"
-                  className="absolute right-1 top-1/2 transform -translate-y-1/2 bg-primary-green text-white p-2 rounded-lg hover:bg-primary-lightGreen shadow-clean"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary-green text-white p-2 rounded-lg hover:bg-primary-lightGreen shadow-clean flex items-center justify-center"
                 >
                   <MagnifyingGlassIcon className="h-5 w-5" />
                 </button>
