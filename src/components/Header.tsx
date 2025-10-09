@@ -62,16 +62,16 @@ export default function Header() {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Search Medicare Part D covered medications..."
+                  placeholder="Search"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-4 pr-12 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-green focus:border-transparent shadow-clean"
                 />
                 <button
                   type="submit"
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary-green text-white p-2 rounded-lg hover:bg-primary-lightGreen shadow-clean"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2"
                 >
-                  <MagnifyingGlassIcon className="h-5 w-5" />
+                  <MagnifyingGlassIcon className="h-5 w-5 text-primary-green" />
                 </button>
               </div>
             </form>
@@ -117,16 +117,16 @@ export default function Header() {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Search medications..."
+                  placeholder="Search"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-48 pl-4 pr-12 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-green focus:border-transparent shadow-clean"
                 />
                 <button
                   type="submit"
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary-green text-white p-2 rounded-lg hover:bg-primary-lightGreen shadow-clean flex items-center justify-center"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 flex items-center justify-center"
                 >
-                  <MagnifyingGlassIcon className="h-5 w-5" />
+                  <MagnifyingGlassIcon className="h-5 w-5 text-primary-green" />
                 </button>
               </div>
             </form>
