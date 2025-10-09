@@ -63,12 +63,8 @@ export default function HomePage() {
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
               backgroundAttachment: 'fixed',
-              imageRendering: 'high-quality',
-              WebkitImageRendering: 'high-quality',
-              MozImageRendering: 'high-quality',
-              msImageRendering: 'high-quality',
               filter: 'brightness(1.1) contrast(1.1) saturate(1.1)'
-            }}
+            } as React.CSSProperties}
           />
           {/* Gradient overlay to blend and fill edges */}
           <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 via-transparent to-green-900/20"></div>
@@ -81,11 +77,11 @@ export default function HomePage() {
           <div className="text-center animate-fade-in-up">
             {/* Round transparent background container */}
             <div className="bg-black/20 backdrop-blur-sm rounded-3xl p-8 sm:p-12 lg:p-16 mx-auto max-w-6xl shadow-2xl border border-white/10">
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-6 sm:mb-8 text-white leading-tight" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6)' }}>
+              <h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-6 sm:mb-8 text-white leading-tight" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6)' } as React.CSSProperties}>
                 Medicare Part D
-                <span className="block text-white" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6)' }}>Prescription Drug Plans</span>
+                <span className="block text-white" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6)' } as React.CSSProperties}>Prescription Drug Plans</span>
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 lg:mb-16 max-w-4xl mx-auto text-gray-200 leading-relaxed px-4" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5)' }}>
+              <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 lg:mb-16 max-w-4xl mx-auto text-gray-200 leading-relaxed px-4" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5)' } as React.CSSProperties}>
                 Find affordable Medicare Part D prescription drug coverage and healthcare insurance plans. 
                 Licensed Medicare brokers help you compare prescription drug costs and save on medications with Medicare Advantage plans.
               </p>
@@ -95,15 +91,15 @@ export default function HomePage() {
                 <button
                   onClick={handleCallHotline}
                   className="bg-white text-primary-green px-6 sm:px-10 py-4 sm:py-5 rounded-2xl font-semibold text-lg sm:text-xl hover:bg-gray-50 flex items-center space-x-3 sm:space-x-4 shadow-clean-lg w-full sm:w-auto max-w-sm transition-all duration-300 hover:scale-105"
-                  style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.3)' }}
+                  style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.3)' } as React.CSSProperties}
                 >
                   <PhoneIcon className="h-6 w-6 sm:h-7 sm:w-7" />
                   <span>Call (800) 631-MEDS</span>
                 </button>
                 <div className="text-center text-white">
-                  <div className="text-sm sm:text-base text-gray-200 font-medium" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.7)' }}>Licensed Medicare Brokers Available 7 days a week</div>
-                  <div className="font-semibold text-base sm:text-lg" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.7)' }}>Mon-Fri: 8AM-8PM • Sat-Sun: 9AM-6PM</div>
-                  <div className="text-xs sm:text-sm text-gray-300 mt-2" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.6)' }}>Medicare Part D enrollment assistance • CMS approved plans</div>
+                  <div className="text-sm sm:text-base text-gray-200 font-medium" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.7)' } as React.CSSProperties}>Licensed Medicare Brokers Available 7 days a week</div>
+                  <div className="font-semibold text-base sm:text-lg" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.7)' } as React.CSSProperties}>Mon-Fri: 8AM-8PM • Sat-Sun: 9AM-6PM</div>
+                  <div className="text-xs sm:text-sm text-gray-300 mt-2" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.6)' } as React.CSSProperties}>Medicare Part D enrollment assistance • CMS approved plans</div>
                 </div>
               </div>
             </div>
