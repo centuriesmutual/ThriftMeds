@@ -21,6 +21,18 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: 'ThriftMeds - Affordable Medicare Part D Prescription Drug Plans | Healthcare Insurance',
   description: 'Find affordable Medicare Part D prescription drug coverage, healthcare insurance plans, and medication pricing. Licensed brokers help you save on prescription drugs with Medicare Advantage and Part D plans.',
+  icons: {
+    icon: [
+      { url: '/assets/logos/thriftlogo.png', sizes: '32x32', type: 'image/png' },
+      { url: '/assets/logos/thriftlogo.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/assets/logos/thriftlogo.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      { rel: 'mask-icon', url: '/assets/logos/thriftlogo.png', color: '#E31837' },
+    ],
+  },
   keywords: [
     'Medicare Part D',
     'Medicare prescription drug plans',
@@ -102,7 +114,7 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#1B5E20',
+  themeColor: '#0097A9',
 }
 
 export default function RootLayout({
@@ -122,7 +134,7 @@ export default function RootLayout({
               "name": "ThriftMeds",
               "description": "Affordable Medicare Part D prescription drug plans and healthcare insurance coverage",
               "url": "https://thriftmeds.com",
-              "logo": "https://thriftmeds.com/logo.png",
+              "logo": "https://thriftmeds.com/assets/logos/thriftlogo.png",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+1-800-631-6337",
