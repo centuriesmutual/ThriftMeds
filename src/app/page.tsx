@@ -83,7 +83,7 @@ export default function HomePage() {
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 lg:mb-16 max-w-4xl mx-auto text-gray-200 leading-relaxed px-4" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5)' } as React.CSSProperties}>
                 Find affordable Medicare Part D prescription drug coverage and healthcare insurance plans. 
-                Licensed Medicare brokers help you compare prescription drug costs and save on medications with Medicare Advantage plans.
+                Licensed Medicare brokers help you compare prescription drug costs.
               </p>
         
               {/* Call to Action - Mobile Optimized */}
