@@ -3,13 +3,13 @@ import { PhoneIcon, EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-black text-white">
+    <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-4 mb-6">
-              <div className="bg-primary-green text-white rounded-xl p-3 shadow-clean">
+              <div className="bg-primary-red text-white rounded-xl p-3 shadow-clean">
                 <span className="font-heading font-bold text-2xl">TM</span>
               </div>
               <div>

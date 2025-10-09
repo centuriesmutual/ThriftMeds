@@ -55,7 +55,7 @@ export default function HomePage() {
       {/* Hero Section - Professional medical background */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-green/90 via-primary-green/85 to-primary-lightGreen/90">
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
             style={{
@@ -71,31 +71,11 @@ export default function HomePage() {
                      Medicare Part D
                      <span className="block text-white">Prescription Drug Plans</span>
                    </h1>
-                   <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 lg:mb-16 max-w-4xl mx-auto text-green-100 leading-relaxed px-4">
+                   <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 lg:mb-16 max-w-4xl mx-auto text-gray-200 leading-relaxed px-4">
                      Find affordable Medicare Part D prescription drug coverage and healthcare insurance plans. 
                      Licensed Medicare brokers help you compare prescription drug costs and save on medications with Medicare Advantage plans.
                    </p>
             
-            {/* Main Search - Mobile Optimized */}
-            <div className="max-w-4xl mx-auto mb-8 sm:mb-12 px-4">
-              <form onSubmit={handleSearch} className="relative">
-                <input
-                  type="text"
-                  placeholder="Search Medicare Part D covered medications (e.g., Lipitor, Metformin, Insulin)..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-4 sm:pl-8 pr-16 sm:pr-20 py-4 sm:py-5 text-lg sm:text-xl rounded-2xl text-primary-black focus:ring-4 focus:ring-white/30 focus:outline-none shadow-clean-lg"
-                />
-                <button
-                  type="submit"
-                  disabled={isSearching}
-                  className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 bg-white text-primary-green p-3 sm:p-4 rounded-xl hover:bg-gray-50 disabled:opacity-50 shadow-clean"
-                >
-                  <MagnifyingGlassIcon className="h-5 w-5 sm:h-7 sm:w-7" />
-                </button>
-              </form>
-            </div>
-
             {/* Call to Action - Mobile Optimized */}
             <div className="flex flex-col gap-6 sm:gap-8 justify-center items-center px-4">
               <button
@@ -105,10 +85,10 @@ export default function HomePage() {
                 <PhoneIcon className="h-6 w-6 sm:h-7 sm:w-7" />
                 <span>Call (800) 631-MEDS</span>
               </button>
-                     <div className="text-center">
-                       <div className="text-sm sm:text-base text-green-100 font-medium">Licensed Medicare Brokers Available 7 days a week</div>
+                     <div className="text-center text-white">
+                       <div className="text-sm sm:text-base text-gray-200 font-medium">Licensed Medicare Brokers Available 7 days a week</div>
                        <div className="font-semibold text-base sm:text-lg">Mon-Fri: 8AM-8PM • Sat-Sun: 9AM-6PM</div>
-                       <div className="text-xs sm:text-sm text-green-200 mt-2">Medicare Part D enrollment assistance • CMS approved plans</div>
+                       <div className="text-xs sm:text-sm text-gray-300 mt-2">Medicare Part D enrollment assistance • CMS approved plans</div>
                      </div>
             </div>
           </div>

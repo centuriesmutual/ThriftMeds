@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 26, 26, 26;
+  --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 249, 250, 251;
   --background-end-rgb: 255, 255, 255;
 }
@@ -52,7 +52,7 @@ a {
   text-decoration: none;
 }
 
-/* Custom scrollbar - Target-inspired */
+/* Custom scrollbar - Walgreens-inspired */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -62,12 +62,12 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1B5E20;
+  background: #0097A9;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2E7D32;
+  background: #00B4CC;
 }
 
 /* Smooth transitions */
@@ -79,11 +79,11 @@ a {
 button:focus,
 input:focus,
 select:focus {
-  outline: 2px solid #1B5E20;
+  outline: 2px solid #0097A9;
   outline-offset: 2px;
 }
 
-/* Target-inspired clean shadows */
+/* Walgreens-inspired clean shadows */
 .shadow-clean {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }

@@ -21,16 +21,16 @@ export default function Header() {
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
       {/* Top banner - Clean and minimal */}
-      <div className="bg-primary-green text-white py-3 px-4">
+      <div className="bg-black text-white py-3 px-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
           <div className="flex items-center space-x-6">
             <span className="font-medium">📞 Speak With A Licensed Broker</span>
-            <span className="hidden md:inline text-green-100">•</span>
-            <span className="hidden md:inline text-green-100">No Obligation</span>
+            <span className="hidden md:inline text-gray-300">•</span>
+            <span className="hidden md:inline text-gray-300">No Obligation</span>
           </div>
           <div className="hidden md:flex items-center space-x-6">
-            <Link href="/legal" className="hover:text-green-100 transition-colors">Legal</Link>
-            <Link href="/compliance" className="hover:text-green-100 transition-colors">Compliance</Link>
+            <Link href="/legal" className="hover:text-gray-300 transition-colors">Legal</Link>
+            <Link href="/compliance" className="hover:text-gray-300 transition-colors">Compliance</Link>
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@ export default function Header() {
         <div className="flex justify-between items-center py-3 sm:py-4">
           {/* Logo - Clean Target-style */}
           <Link href="/" className="flex items-center space-x-2 sm:space-x-4">
-            <div className="bg-primary-green text-white rounded-xl p-2 sm:p-3 shadow-clean">
+            <div className="bg-primary-red text-white rounded-xl p-2 sm:p-3 shadow-clean">
               <span className="font-heading font-bold text-xl sm:text-2xl">TM</span>
             </div>
             <div>
@@ -122,7 +122,7 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden border-t border-gray-200 py-4">
             <div className="flex flex-col space-y-4">
-              <div className="flex items-center justify-between bg-primary-green text-white p-4 rounded-xl shadow-clean">
+              <div className="flex items-center justify-between bg-primary-red text-white p-4 rounded-xl shadow-clean">
                 <div>
                   <div className="text-sm font-medium">CMS Approved ✓ Licensed</div>
                   <div className="text-sm">Licensed Broker</div>
