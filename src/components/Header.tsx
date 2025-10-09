@@ -1,12 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { MagnifyingGlassIcon, PhoneIcon, Bars3Icon, XMarkIcon, UserIcon } from '@heroicons/react/24/outline'
+import { MagnifyingGlassIcon, UserIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import Image from 'next/image'
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
 
   const handleSearch = (e: React.FormEvent) => {
@@ -50,7 +49,7 @@ export default function Header() {
                 priority
               />
             </div>
-            <div className="hidden sm:block">
+            <div>
                      <h1 className="font-heading font-bold text-2xl sm:text-3xl text-primary-black">ThriftMeds</h1>
                      <p className="text-xs sm:text-sm text-primary-gray font-medium">Medicare Part D Plans</p>
             </div>
@@ -90,21 +89,9 @@ export default function Header() {
               <span>Login</span>
             </button>
           </div>
-
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-primary-gray hover:text-primary-green hover:bg-gray-50"
-          >
-            {isMenuOpen ? (
-              <XMarkIcon className="h-6 w-6" />
-            ) : (
-              <Bars3Icon className="h-6 w-6" />
-            )}
-          </button>
         </div>
 
-        {/* Mobile search - Side by side with logo */}
+        {/* Mobile search - Horizontal next to logo */}
         <div className="md:hidden pb-4 flex items-center space-x-3">
           <div className="flex-1">
             <form onSubmit={handleSearch}>
@@ -118,45 +105,14 @@ export default function Header() {
                   />
                 <button
                   type="submit"
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary-green text-white p-2 rounded-lg hover:bg-primary-lightGreen shadow-clean"
+                  className="absolute right-1 top-1/2 transform -translate-y-1/2 bg-primary-green text-white p-2 rounded-lg hover:bg-primary-lightGreen shadow-clean"
                 >
                   <MagnifyingGlassIcon className="h-5 w-5" />
                 </button>
               </div>
             </form>
           </div>
-          <button onClick={handleLogin} className="btn-primary flex items-center space-x-2 shadow-clean text-sm px-4 py-3">
-            <UserIcon className="h-4 w-4" />
-            <span className="hidden xs:inline">Login</span>
-          </button>
         </div>
-
-        {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 py-4">
-            <div className="flex flex-col space-y-4">
-              <div className="flex items-center justify-between bg-primary-red text-white p-4 rounded-xl shadow-clean">
-                <div className="flex items-center space-x-3">
-                  <div className="relative w-10 h-10">
-                    <Image
-                      src="/assets/logos/thriftlogo.png"
-                      alt="ThriftMeds Logo"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium">CMS Approved ✓ Licensed</div>
-                    <div className="text-sm">Licensed Broker</div>
-                  </div>
-                </div>
-                <UserIcon className="h-6 w-6" />
-              </div>
-              <Link href="/about" className="text-primary-gray hover:text-primary-green py-2 font-medium transition-colors">About</Link>
-              <Link href="/contact" className="text-primary-gray hover:text-primary-green py-2 font-medium transition-colors">Contact</Link>
-            </div>
-          </div>
-        )}
 
       </div>
     </header>
