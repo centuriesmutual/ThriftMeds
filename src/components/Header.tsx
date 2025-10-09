@@ -50,13 +50,13 @@ export default function Header() {
                 priority
               />
             </div>
-            <div>
+            <div className="hidden sm:block">
                      <h1 className="font-heading font-bold text-2xl sm:text-3xl text-primary-black">ThriftMeds</h1>
                      <p className="text-xs sm:text-sm text-primary-gray font-medium">Medicare Part D Plans</p>
             </div>
           </Link>
 
-          {/* Search Bar */}
+          {/* Search Bar - Desktop */}
           <div className="hidden md:flex flex-1 max-w-2xl mx-8">
             <form onSubmit={handleSearch} className="w-full">
               <div className="relative">
@@ -104,25 +104,31 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile search */}
-        <div className="md:hidden pb-4">
-          <form onSubmit={handleSearch}>
-            <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Search Medicare Part D covered medications..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-4 pr-12 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-green focus:border-transparent shadow-clean"
-                />
-              <button
-                type="submit"
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary-green text-white p-2 rounded-lg hover:bg-primary-lightGreen shadow-clean"
-              >
-                <MagnifyingGlassIcon className="h-5 w-5" />
-              </button>
-            </div>
-          </form>
+        {/* Mobile search - Side by side with logo */}
+        <div className="md:hidden pb-4 flex items-center space-x-3">
+          <div className="flex-1">
+            <form onSubmit={handleSearch}>
+              <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="Search medications..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full pl-4 pr-12 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-green focus:border-transparent shadow-clean"
+                  />
+                <button
+                  type="submit"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary-green text-white p-2 rounded-lg hover:bg-primary-lightGreen shadow-clean"
+                >
+                  <MagnifyingGlassIcon className="h-5 w-5" />
+                </button>
+              </div>
+            </form>
+          </div>
+          <button onClick={handleLogin} className="btn-primary flex items-center space-x-2 shadow-clean text-sm px-4 py-3">
+            <UserIcon className="h-4 w-4" />
+            <span className="hidden xs:inline">Login</span>
+          </button>
         </div>
 
         {/* Mobile menu */}
@@ -151,6 +157,7 @@ export default function Header() {
             </div>
           </div>
         )}
+
       </div>
     </header>
   )

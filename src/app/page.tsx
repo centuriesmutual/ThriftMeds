@@ -90,7 +90,7 @@ export default function HomePage() {
               <div className="flex flex-col gap-6 sm:gap-8 justify-center items-center px-4">
                 <button
                   onClick={handleCallHotline}
-                  className="bg-white text-primary-green px-6 sm:px-10 py-4 sm:py-5 rounded-2xl font-semibold text-lg sm:text-xl hover:bg-gray-50 flex items-center space-x-3 sm:space-x-4 shadow-clean-lg w-full sm:w-auto max-w-sm transition-all duration-300 hover:scale-105"
+                  className="bg-white text-primary-green px-6 sm:px-10 py-4 sm:py-5 rounded-2xl font-semibold text-lg sm:text-xl hover:bg-gray-50 flex items-center justify-center space-x-3 sm:space-x-4 shadow-clean-lg w-full sm:w-auto max-w-sm transition-all duration-300 hover:scale-105"
                   style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.3)' } as React.CSSProperties}
                 >
                   <PhoneIcon className="h-6 w-6 sm:h-7 sm:w-7" />
