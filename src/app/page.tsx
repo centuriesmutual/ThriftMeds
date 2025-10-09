@@ -73,10 +73,10 @@ export default function HomePage() {
         </div>
         
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-16 lg:py-24">
           <div className="text-center animate-fade-in-up">
             {/* Round transparent background container */}
-            <div className="bg-black/20 backdrop-blur-sm rounded-3xl p-8 sm:p-12 lg:p-16 mx-auto max-w-6xl shadow-2xl border border-white/10">
+            <div className="bg-black/20 backdrop-blur-sm rounded-3xl p-6 sm:p-12 lg:p-16 mx-auto max-w-6xl shadow-2xl border border-white/10">
               <h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-6 sm:mb-8 text-white leading-tight" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6)' } as React.CSSProperties}>
                 Medicare Part D
                 <span className="block text-white" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6)' } as React.CSSProperties}>Prescription Drug Plans</span>

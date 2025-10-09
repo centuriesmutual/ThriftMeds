@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
 
         {/* Company */}
-        <div>
+        <div className="text-center md:text-left">
           <h4 className="font-heading font-semibold text-xl mb-6">Company</h4>
           <ul className="space-y-3">
             <li>
@@ -56,26 +56,26 @@ export default function Footer() {
         </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="font-heading font-semibold text-xl mb-6">Contact Info</h4>
             <div className="space-y-4">
-              <div className="flex items-start space-x-3">
+              <div className="flex items-start justify-center md:justify-start space-x-3">
                 <PhoneIcon className="h-5 w-5 text-primary-lightGreen mt-0.5" />
-                <div>
+                <div className="text-center md:text-left">
                   <div className="text-gray-300 font-medium">Licensed Broker Line</div>
                   <div className="font-semibold text-white">(800) 631-MEDS</div>
                 </div>
               </div>
-              <div className="flex items-start space-x-3">
+              <div className="flex items-start justify-center md:justify-start space-x-3">
                 <EnvelopeIcon className="h-5 w-5 text-primary-lightGreen mt-0.5" />
-                <div>
+                <div className="text-center md:text-left">
                   <div className="text-gray-300 font-medium">Email</div>
                   <div className="font-semibold text-white">support@thriftmeds.com</div>
                 </div>
               </div>
-              <div className="flex items-start space-x-3">
+              <div className="flex items-start justify-center md:justify-start space-x-3">
                 <MapPinIcon className="h-5 w-5 text-primary-lightGreen mt-0.5" />
-                <div>
+                <div className="text-center md:text-left">
                   <div className="text-gray-300 font-medium">Hours</div>
                   <div className="font-semibold text-white">Mon-Fri: 8AM-8PM</div>
                   <div className="font-semibold text-white">Sat-Sun: 9AM-6PM</div>
