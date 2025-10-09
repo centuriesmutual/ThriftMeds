@@ -96,6 +96,9 @@ export default function HomePage() {
                   <PhoneIcon className="h-6 w-6 sm:h-7 sm:w-7" />
                   <span>Call (800) 631-MEDS</span>
                 </button>
+                <div className="text-center text-white mt-4">
+                  <div className="text-xs sm:text-sm text-gray-300" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.6)' } as React.CSSProperties}>Medicare Part D Enrollment Assistance • CMS Approved Program</div>
+                </div>
               </div>
             </div>
           </div>
