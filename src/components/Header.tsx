@@ -92,11 +92,11 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Layout - Horizontal Logo and Search */}
-        <div className="md:hidden flex items-center space-x-2 py-3 sm:py-4">
-          {/* Logo - Mobile */}
-          <Link href="/" className="flex items-center space-x-1 flex-shrink-0">
-            <div className="relative w-10 h-10">
+        {/* Mobile Layout - Professional Logo/Text on Left, Search on Right */}
+        <div className="md:hidden flex justify-between items-center py-3 sm:py-4">
+          {/* Logo and Text - Left Side - Professional Desktop Look */}
+          <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
+            <div className="relative w-14 h-14">
               <Image
                 src="/assets/logos/thriftlogo.png"
                 alt="ThriftMeds Logo"
@@ -105,28 +105,28 @@ export default function Header() {
                 priority
               />
             </div>
-            <div className="block">
-              <h1 className="font-heading font-bold text-sm text-primary-black">ThriftMeds</h1>
-              <p className="text-xs text-primary-gray font-medium hidden sm:block">Medicare Part D Plans</p>
+            <div>
+              <h1 className="font-heading font-bold text-lg text-primary-black">ThriftMeds</h1>
+              <p className="text-xs text-primary-gray font-medium">Medicare Part D Plans</p>
             </div>
           </Link>
 
-          {/* Search Bar - Mobile - Shorter to make room for text */}
-          <div className="flex-1 max-w-48">
+          {/* Search Bar - Right Side - Compact but Professional */}
+          <div className="flex-shrink-0 ml-4">
             <form onSubmit={handleSearch}>
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Search..."
+                  placeholder="Search medications..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-3 pr-10 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-green focus:border-transparent shadow-clean"
+                  className="w-48 pl-4 pr-12 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-green focus:border-transparent shadow-clean"
                 />
                 <button
                   type="submit"
-                  className="absolute right-1 top-1/2 transform -translate-y-1/2 bg-primary-green text-white p-1.5 rounded-md hover:bg-primary-lightGreen shadow-clean flex items-center justify-center"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary-green text-white p-2 rounded-lg hover:bg-primary-lightGreen shadow-clean flex items-center justify-center"
                 >
-                  <MagnifyingGlassIcon className="h-4 w-4" />
+                  <MagnifyingGlassIcon className="h-5 w-5" />
                 </button>
               </div>
             </form>
