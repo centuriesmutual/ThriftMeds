@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { PhoneIcon, EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline'
 
 export default function Footer() {
@@ -9,8 +10,13 @@ export default function Footer() {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-4 mb-6">
-              <div className="bg-primary-red text-white rounded-xl p-3 shadow-clean">
-                <span className="font-heading font-bold text-2xl">TM</span>
+              <div className="relative w-16 h-16">
+                <Image
+                  src="/assets/logos/thriftlogo.png"
+                  alt="ThriftMeds Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <div>
                      <h3 className="font-heading font-bold text-3xl">ThriftMeds</h3>

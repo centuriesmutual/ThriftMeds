@@ -55,41 +55,57 @@ export default function HomePage() {
       {/* Hero Section - Professional medical background */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
+        <div className="absolute inset-0">
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='1920' height='1080' viewBox='0 0 1920 1080' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1920' height='1080' fill='%23F0F9FF'/%3E%3Cpath d='M0 540L80 500L160 560L240 480L320 520L400 580L480 540L560 600L640 520L720 580L800 540L880 600L960 520L1040 580L1120 540L1200 600L1280 520L1360 580L1440 540L1520 600L1600 520L1680 580L1760 540L1840 600L1920 520V1080H0V540Z' fill='%23E0F2FE' opacity='0.5'/%3E%3Ccircle cx='200' cy='200' r='100' fill='%23BAE6FD' opacity='0.3'/%3E%3Ccircle cx='1720' cy='300' r='150' fill='%23BAE6FD' opacity='0.2'/%3E%3Ccircle cx='400' cy='800' r='120' fill='%23BAE6FD' opacity='0.25'/%3E%3Ccircle cx='1500' cy='900' r='80' fill='%23BAE6FD' opacity='0.3'/%3E%3C/svg%3E")`
+              backgroundImage: `url("/assets/images/landscape.jpeg")`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center center',
+              backgroundAttachment: 'fixed',
+              imageRendering: 'high-quality',
+              WebkitImageRendering: 'high-quality',
+              MozImageRendering: 'high-quality',
+              msImageRendering: 'high-quality',
+              filter: 'brightness(1.1) contrast(1.1) saturate(1.1)'
             }}
           />
+          {/* Gradient overlay to blend and fill edges */}
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 via-transparent to-green-900/20"></div>
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/30"></div>
         </div>
         
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-          <div className="text-center">
-                   <h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-6 sm:mb-8 text-white leading-tight">
-                     Medicare Part D
-                     <span className="block text-white">Prescription Drug Plans</span>
-                   </h1>
-                   <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 lg:mb-16 max-w-4xl mx-auto text-gray-200 leading-relaxed px-4">
-                     Find affordable Medicare Part D prescription drug coverage and healthcare insurance plans. 
-                     Licensed Medicare brokers help you compare prescription drug costs and save on medications with Medicare Advantage plans.
-                   </p>
-            
-            {/* Call to Action - Mobile Optimized */}
-            <div className="flex flex-col gap-6 sm:gap-8 justify-center items-center px-4">
-              <button
-                onClick={handleCallHotline}
-                className="bg-white text-primary-green px-6 sm:px-10 py-4 sm:py-5 rounded-2xl font-semibold text-lg sm:text-xl hover:bg-gray-50 flex items-center space-x-3 sm:space-x-4 shadow-clean-lg w-full sm:w-auto max-w-sm"
-              >
-                <PhoneIcon className="h-6 w-6 sm:h-7 sm:w-7" />
-                <span>Call (800) 631-MEDS</span>
-              </button>
-                     <div className="text-center text-white">
-                       <div className="text-sm sm:text-base text-gray-200 font-medium">Licensed Medicare Brokers Available 7 days a week</div>
-                       <div className="font-semibold text-base sm:text-lg">Mon-Fri: 8AM-8PM • Sat-Sun: 9AM-6PM</div>
-                       <div className="text-xs sm:text-sm text-gray-300 mt-2">Medicare Part D enrollment assistance • CMS approved plans</div>
-                     </div>
+          <div className="text-center animate-fade-in-up">
+            {/* Round transparent background container */}
+            <div className="bg-black/20 backdrop-blur-sm rounded-3xl p-8 sm:p-12 lg:p-16 mx-auto max-w-6xl shadow-2xl border border-white/10">
+              <h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-6 sm:mb-8 text-white leading-tight" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6)' }}>
+                Medicare Part D
+                <span className="block text-white" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6)' }}>Prescription Drug Plans</span>
+              </h1>
+              <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 lg:mb-16 max-w-4xl mx-auto text-gray-200 leading-relaxed px-4" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5)' }}>
+                Find affordable Medicare Part D prescription drug coverage and healthcare insurance plans. 
+                Licensed Medicare brokers help you compare prescription drug costs and save on medications with Medicare Advantage plans.
+              </p>
+        
+              {/* Call to Action - Mobile Optimized */}
+              <div className="flex flex-col gap-6 sm:gap-8 justify-center items-center px-4">
+                <button
+                  onClick={handleCallHotline}
+                  className="bg-white text-primary-green px-6 sm:px-10 py-4 sm:py-5 rounded-2xl font-semibold text-lg sm:text-xl hover:bg-gray-50 flex items-center space-x-3 sm:space-x-4 shadow-clean-lg w-full sm:w-auto max-w-sm transition-all duration-300 hover:scale-105"
+                  style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.3)' }}
+                >
+                  <PhoneIcon className="h-6 w-6 sm:h-7 sm:w-7" />
+                  <span>Call (800) 631-MEDS</span>
+                </button>
+                <div className="text-center text-white">
+                  <div className="text-sm sm:text-base text-gray-200 font-medium" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.7)' }}>Licensed Medicare Brokers Available 7 days a week</div>
+                  <div className="font-semibold text-base sm:text-lg" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.7)' }}>Mon-Fri: 8AM-8PM • Sat-Sun: 9AM-6PM</div>
+                  <div className="text-xs sm:text-sm text-gray-300 mt-2" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.6)' }}>Medicare Part D enrollment assistance • CMS approved plans</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -75,6 +75,18 @@ a {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* High-quality image rendering */
+img, [style*="background-image"] {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  image-rendering: high-quality;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
 /* Focus styles - Professional */
 button:focus,
 input:focus,
@@ -103,6 +115,23 @@ select:focus {
 
 .btn-secondary {
   @apply btn-clean bg-white text-primary-green border border-primary-green hover:bg-primary-green hover:text-white focus:ring-primary-green;
+}
+
+/* Animation for hero content */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0;
 }
 
 /* Mobile-specific improvements */

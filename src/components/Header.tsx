@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { MagnifyingGlassIcon, PhoneIcon, Bars3Icon, XMarkIcon, UserIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -40,8 +41,14 @@ export default function Header() {
         <div className="flex justify-between items-center py-3 sm:py-4">
           {/* Logo - Clean Target-style */}
           <Link href="/" className="flex items-center space-x-2 sm:space-x-4">
-            <div className="bg-primary-red text-white rounded-xl p-2 sm:p-3 shadow-clean">
-              <span className="font-heading font-bold text-xl sm:text-2xl">TM</span>
+            <div className="relative w-14 h-14 sm:w-16 sm:h-16">
+              <Image
+                src="/assets/logos/thriftlogo.png"
+                alt="ThriftMeds Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
             <div>
                      <h1 className="font-heading font-bold text-2xl sm:text-3xl text-primary-black">ThriftMeds</h1>
@@ -123,9 +130,19 @@ export default function Header() {
           <div className="md:hidden border-t border-gray-200 py-4">
             <div className="flex flex-col space-y-4">
               <div className="flex items-center justify-between bg-primary-red text-white p-4 rounded-xl shadow-clean">
-                <div>
-                  <div className="text-sm font-medium">CMS Approved ✓ Licensed</div>
-                  <div className="text-sm">Licensed Broker</div>
+                <div className="flex items-center space-x-3">
+                  <div className="relative w-10 h-10">
+                    <Image
+                      src="/assets/logos/thriftlogo.png"
+                      alt="ThriftMeds Logo"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium">CMS Approved ✓ Licensed</div>
+                    <div className="text-sm">Licensed Broker</div>
+                  </div>
                 </div>
                 <UserIcon className="h-6 w-6" />
               </div>
