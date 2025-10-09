@@ -73,7 +73,7 @@ export default function HomePage() {
         </div>
         
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-64 sm:mt-0 py-0 sm:py-14 lg:py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:mt-0 py-0 sm:py-14 lg:py-20">
           <div className="text-center animate-fade-in-up flex flex-col justify-start sm:justify-center h-full">
             {/* Round transparent background container */}
             <div className="bg-black/20 backdrop-blur-sm rounded-3xl p-8 sm:p-10 lg:p-14 mx-auto max-w-6xl sm:max-w-5xl shadow-2xl border border-white/10">
