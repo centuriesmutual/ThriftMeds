@@ -31,6 +31,7 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         heading: ['Poppins', 'system-ui', 'sans-serif'],
+        gothic: ['UnifrakturMaguntia', 'serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

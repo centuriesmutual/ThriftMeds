@@ -1,18 +1,10 @@
 'use client'
 
-import { useState } from 'react'
-import { MagnifyingGlassIcon, UserIcon } from '@heroicons/react/24/outline'
+import { UserIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import Image from 'next/image'
 
 export default function Header() {
-  const [searchQuery, setSearchQuery] = useState('')
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle search logic here
-    console.log('Searching for:', searchQuery)
-  }
 
   const handleLogin = () => {
     window.location.href = '/login'
@@ -24,7 +16,7 @@ export default function Header() {
       <div className="bg-black text-white py-3 px-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
           <div className="flex items-center space-x-6">
-            <span className="font-medium">📞 Speak With A Licensed Broker</span>
+            <span className="font-medium">📞 Get A Quote</span>
             <span className="hidden md:inline text-gray-300">•</span>
             <span className="hidden md:inline text-gray-300">No Obligation</span>
           </div>
@@ -56,26 +48,6 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Search Bar - Desktop */}
-          <div className="flex flex-1 max-w-2xl mx-8">
-            <form onSubmit={handleSearch} className="w-full">
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Search"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-4 pr-12 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-green focus:border-transparent shadow-clean"
-                />
-                <button
-                  type="submit"
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2"
-                >
-                  <MagnifyingGlassIcon className="h-5 w-5 text-primary-green" />
-                </button>
-              </div>
-            </form>
-          </div>
 
           {/* Call to Action - Desktop */}
           <div className="flex items-center space-x-4 lg:space-x-6">
@@ -92,7 +64,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Layout - Professional Logo/Text on Left, Search on Right */}
+        {/* Mobile Layout - Professional Logo/Text on Left, Login on Right */}
         <div className="md:hidden flex justify-between items-center py-3 sm:py-4">
           {/* Logo and Text - Left Side - Professional Desktop Look */}
           <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
@@ -111,26 +83,11 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Search Bar - Right Side - Compact but Professional */}
-          <div className="flex-shrink-0 ml-4">
-            <form onSubmit={handleSearch}>
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Search"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-48 pl-4 pr-12 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-green focus:border-transparent shadow-clean"
-                />
-                <button
-                  type="submit"
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 flex items-center justify-center"
-                >
-                  <MagnifyingGlassIcon className="h-5 w-5 text-primary-green" />
-                </button>
-              </div>
-            </form>
-          </div>
+          {/* Login Button - Right Side */}
+          <button onClick={handleLogin} className="btn-primary flex items-center space-x-2 shadow-clean text-xs px-4 py-2">
+            <UserIcon className="h-4 w-4" />
+            <span>Login</span>
+          </button>
         </div>
 
       </div>

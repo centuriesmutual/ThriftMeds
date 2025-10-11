@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { PhoneIcon, EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline'
+import { PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline'
 
 export default function Footer() {
   return (
@@ -8,9 +8,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-4 mb-6">
-              <div className="relative w-16 h-16">
+          <div className="col-span-1 md:col-span-2 text-center md:text-left">
+            <div className="flex flex-col md:flex-row items-center md:space-x-4 mb-6">
+              <div className="relative w-16 h-16 mb-4 md:mb-0">
                 <Image
                   src="/assets/logos/thriftlogo.png"
                   alt="ThriftMeds Logo"
@@ -23,14 +23,10 @@ export default function Footer() {
                      <p className="text-gray-300 font-medium">Medicare Part D Plans</p>
               </div>
             </div>
-            <p className="text-gray-300 mb-6 max-w-md">
+            <p className="text-gray-300 mb-6 max-w-md mx-auto md:mx-0">
               Your trusted partner in finding affordable Medicare Part D prescription drug plans. 
               Compare Medicare Advantage and Part D coverage options with licensed insurance brokers.
             </p>
-            <div className="flex items-center space-x-3 text-primary-lightGreen">
-              <PhoneIcon className="h-6 w-6" />
-              <span className="font-semibold text-xl">(800) 631-MEDS</span>
-            </div>
           </div>
 
         {/* Company */}
@@ -40,11 +36,6 @@ export default function Footer() {
             <li>
               <Link href="/about" className="text-gray-300 hover:text-white transition-colors font-medium">
                 About Us
-              </Link>
-            </li>
-            <li>
-              <Link href="/press" className="text-gray-300 hover:text-white transition-colors font-medium">
-                Press
               </Link>
             </li>
             <li>
@@ -62,7 +53,7 @@ export default function Footer() {
               <div className="flex items-start space-x-3">
                 <PhoneIcon className="h-5 w-5 text-primary-lightGreen mt-0.5" />
                 <div>
-                  <div className="text-gray-300 font-medium">Licensed Broker Line</div>
+                  <div className="text-gray-300 font-medium">Phone</div>
                   <div className="font-semibold text-white">(800) 631-MEDS</div>
                 </div>
               </div>
@@ -71,14 +62,6 @@ export default function Footer() {
                 <div>
                   <div className="text-gray-300 font-medium">Email</div>
                   <div className="font-semibold text-white">support@thriftmeds.com</div>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <MapPinIcon className="h-5 w-5 text-primary-lightGreen mt-0.5" />
-                <div>
-                  <div className="text-gray-300 font-medium">Hours</div>
-                  <div className="font-semibold text-white">Mon-Fri: 8AM-8PM</div>
-                  <div className="font-semibold text-white">Sat-Sun: 9AM-6PM</div>
                 </div>
               </div>
             </div>

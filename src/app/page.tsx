@@ -1,57 +1,15 @@
 'use client'
 
-import { useState } from 'react'
-import { MagnifyingGlassIcon, PhoneIcon, ShieldCheckIcon, ClockIcon, CurrencyDollarIcon, UserIcon } from '@heroicons/react/24/outline'
-import Link from 'next/link'
-
-interface Medication {
-  id: string
-  name: string
-  genericName?: string
-  category: string
-}
+import { PhoneIcon } from '@heroicons/react/24/outline'
 
 export default function HomePage() {
-  const [searchQuery, setSearchQuery] = useState('')
-  const [searchResults, setSearchResults] = useState<Medication[]>([])
-  const [isSearching, setIsSearching] = useState(false)
-
-  // Mock medication database
-  const mockMedications: Medication[] = [
-    { id: '1', name: 'Lipitor', genericName: 'Atorvastatin', category: 'Cholesterol' },
-    { id: '2', name: 'Metformin', category: 'Diabetes' },
-    { id: '3', name: 'Lisinopril', category: 'Blood Pressure' },
-    { id: '4', name: 'Amlodipine', category: 'Blood Pressure' },
-    { id: '5', name: 'Omeprazole', category: 'Acid Reflux' },
-    { id: '6', name: 'Simvastatin', category: 'Cholesterol' },
-    { id: '7', name: 'Losartan', category: 'Blood Pressure' },
-    { id: '8', name: 'Albuterol', category: 'Asthma' },
-    { id: '9', name: 'Gabapentin', category: 'Pain Management' },
-    { id: '10', name: 'Hydrochlorothiazide', category: 'Blood Pressure' },
-  ]
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSearching(true)
-    
-    // Simulate search delay
-    setTimeout(() => {
-      const results = mockMedications.filter(med => 
-        med.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        med.genericName?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        med.category.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-      setSearchResults(results)
-      setIsSearching(false)
-    }, 1000)
-  }
 
   const handleCallHotline = () => {
     window.location.href = '/login'
   }
 
   return (
-    <div className="min-h-screen">
+    <>
       {/* Hero Section - Professional medical background */}
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
@@ -73,15 +31,15 @@ export default function HomePage() {
         </div>
         
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:mt-0 py-0 sm:py-14 lg:py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 sm:mt-0 py-4 sm:py-14 lg:py-20">
           <div className="text-center animate-fade-in-up flex flex-col justify-start sm:justify-center h-full">
-            {/* Gray see-through background container */}
-            <div className="bg-gray-800/60 backdrop-blur-none rounded-3xl p-8 sm:p-10 lg:p-14 mx-auto max-w-6xl sm:max-w-5xl shadow-lg border border-gray-600/30">
-              <h1 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-5 sm:mb-7 text-gray-100 leading-tight" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7)' } as React.CSSProperties}>
+            {/* Professional glass background container */}
+            <div className="bg-black/40 backdrop-blur-md rounded-3xl p-8 sm:p-10 lg:p-14 mx-auto max-w-6xl sm:max-w-5xl shadow-2xl border border-white/20">
+              <h1 className="font-gothic-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-5 sm:mb-7 text-white leading-tight" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 12px rgba(0,0,0,0.6)' } as React.CSSProperties}>
                 Medicare Part D
-                <span className="block text-gray-50" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7)' } as React.CSSProperties}>Prescription Drug Plans</span>
+                <span className="block text-white" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 12px rgba(0,0,0,0.6)' } as React.CSSProperties}>Prescription Drug Plans</span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl mb-7 sm:mb-10 lg:mb-12 max-w-4xl mx-auto text-gray-100 leading-relaxed px-4" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8), 0 0 6px rgba(0,0,0,0.6)' } as React.CSSProperties}>
+              <p className="text-base sm:text-lg md:text-xl mb-7 sm:mb-10 lg:mb-12 max-w-4xl mx-auto text-white leading-relaxed px-4" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.6)' } as React.CSSProperties}>
                 Find affordable Medicare Part D prescription drug coverage and pricing. 
                 Licensed Medicare brokers help you compare prescription drug costs.
               </p>
@@ -89,210 +47,25 @@ export default function HomePage() {
               {/* Call to Action - Mobile Optimized */}
               <div className="flex flex-col gap-5 sm:gap-7 justify-center items-center px-4">
                 <button
-                  onClick={handleCallHotline}
+                  onClick={() => window.location.href = '/download-app'}
                   className="bg-white text-black px-6 sm:px-9 py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg hover:bg-gray-50 flex items-center justify-center space-x-2 sm:space-x-3 shadow-clean-lg w-full sm:w-auto max-w-sm transition-all duration-300 hover:scale-105"
                   style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.3)' } as React.CSSProperties}
                 >
                   <PhoneIcon className="h-5 w-5 sm:h-6 sm:w-6" />
-                  <span>Call (800) 631-MEDS</span>
+                  <span>Download App</span>
                 </button>
-                <div className="text-center text-gray-100 mt-3">
-                  <div className="text-sm sm:text-base text-gray-100 font-medium" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' } as React.CSSProperties}>Licensed Medicare Brokers Available 7 days a week</div>
-                  <div className="font-semibold text-base sm:text-lg text-gray-50" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' } as React.CSSProperties}>Mon-Fri: 8AM-8PM • Sat-Sun: 9AM-6PM</div>
-                  <div className="text-xs sm:text-sm text-gray-200 mt-2" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.7)' } as React.CSSProperties}>Medicare Part D Enrollment Assistance • CMS Approved Program</div>
-                </div>
+                <button
+                  onClick={() => window.location.href = '/learn-more'}
+                  className="bg-primary-green text-white px-6 sm:px-9 py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg hover:bg-primary-lightGreen flex items-center justify-center space-x-2 sm:space-x-3 shadow-clean-lg w-full sm:w-auto max-w-sm transition-all duration-300 hover:scale-105"
+                  style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.3)' } as React.CSSProperties}
+                >
+                  <span>Learn More</span>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Search Results - Mobile Optimized */}
-      {searchResults.length > 0 && (
-        <section className="py-8 sm:py-12 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-heading font-bold text-2xl sm:text-3xl text-center mb-6 sm:mb-8 text-primary-black">
-              Search Results
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              {searchResults.map((medication) => (
-                <div key={medication.id} className="bg-white rounded-xl shadow-clean p-4 sm:p-6 hover:shadow-clean-lg transition-shadow">
-                  <h3 className="font-heading font-semibold text-lg sm:text-xl text-primary-black mb-2">
-                    {medication.name}
-                  </h3>
-                  {medication.genericName && (
-                    <p className="text-primary-gray mb-2 text-sm sm:text-base">
-                      Generic: {medication.genericName}
-                    </p>
-                  )}
-                  <p className="text-xs sm:text-sm text-primary-gray mb-4">
-                    Category: {medication.category}
-                  </p>
-                  <button
-                    onClick={handleCallHotline}
-                    className="w-full btn-primary flex items-center justify-center space-x-2 shadow-clean text-sm sm:text-base py-2 sm:py-3"
-                  >
-                    <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5" />
-                    <span>Get Pricing</span>
-                  </button>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Features Section - Full Page Stacked */}
-      <section className="bg-white">
-        {/* Affordable Pricing Section */}
-        <div 
-          className="min-h-screen flex items-center relative"
-          style={{
-            backgroundImage: `url("/assets/images/fairy1.png")`,
-            backgroundSize: '50% auto',
-            backgroundPosition: 'left center',
-            backgroundRepeat: 'no-repeat'
-          } as React.CSSProperties}
-        >
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              <div className="text-center lg:text-left bg-white/75 backdrop-blur-sm rounded-3xl p-8 sm:p-10 lg:p-12 shadow-xl border border-white/20">
-                       <h3 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-8 text-primary-black">
-                         Medicare Part D Drug Plans
-                       </h3>
-                       <p className="text-primary-gray leading-relaxed text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0">
-                         Compare Medicare Part D prescription drug plans and find affordable coverage for your medications. 
-                         Our licensed Medicare brokers help you navigate the coverage gap, deductibles, and copay structures 
-                         to maximize your prescription drug benefits. We work with CMS-approved Medicare Advantage and Part D 
-                         plans to ensure you get the best possible coverage while minimizing out-of-pocket costs.
-                       </p>
-              </div>
-              <div className="bg-white rounded-2xl p-8 shadow-clean-lg">
-                <div className="text-center">
-                  <h4 className="font-heading font-semibold text-2xl mb-6 text-primary-black">Medicare Part D Coverage</h4>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="font-medium">Lipitor 20mg - Tier 2</span>
-                      <span className="text-primary-green font-bold">$25 copay</span>
-                    </div>
-                    <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="font-medium">Metformin 500mg - Tier 1</span>
-                      <span className="text-primary-green font-bold">$5 copay</span>
-                    </div>
-                    <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="font-medium">Insulin - Tier 3</span>
-                      <span className="text-primary-green font-bold">$47 copay</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Instant Information Section */}
-        <div 
-          className="min-h-screen flex items-center relative"
-          style={{
-            backgroundImage: `url("/assets/images/fairy2.png")`,
-            backgroundSize: '50% auto',
-            backgroundPosition: 'right center',
-            backgroundRepeat: 'no-repeat'
-          } as React.CSSProperties}
-        >
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              <div className="bg-gray-50 rounded-2xl p-8 shadow-clean-lg order-2 lg:order-1">
-                <div className="text-center">
-                  <h4 className="font-heading font-semibold text-2xl mb-6 text-primary-black">Available Hours</h4>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center p-4 bg-white rounded-lg">
-                      <span className="font-medium">Monday - Friday</span>
-                      <span className="text-primary-green font-bold">8:00 AM - 8:00 PM</span>
-                    </div>
-                    <div className="flex justify-between items-center p-4 bg-white rounded-lg">
-                      <span className="font-medium">Saturday - Sunday</span>
-                      <span className="text-primary-green font-bold">9:00 AM - 6:00 PM</span>
-                    </div>
-                    <div className="text-center mt-6">
-                      <button
-                        onClick={handleCallHotline}
-                        className="btn-primary text-lg px-8 py-4 shadow-clean"
-                      >
-                        Call (800) 631-MEDS
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="text-center lg:text-left order-1 lg:order-2 bg-white/75 backdrop-blur-sm rounded-3xl p-8 sm:p-10 lg:p-12 shadow-xl border border-white/20">
-                       <h3 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-8 text-primary-black">
-                         Medicare Enrollment Support
-                       </h3>
-                       <p className="text-primary-gray leading-relaxed text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0">
-                         Get instant Medicare Part D enrollment assistance from licensed insurance brokers. 
-                         Our Medicare specialists help you understand plan formularies, coverage gaps, and 
-                         catastrophic coverage thresholds. We provide real-time quotes for Medicare Advantage 
-                         and Part D plans, helping you make informed decisions during open enrollment periods. 
-                         Our CMS-approved brokers are available 7 days a week to guide you through Medicare eligibility and plan selection.
-                       </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Trusted & Reliable Section */}
-        <div 
-          className="min-h-screen flex items-center relative"
-          style={{
-            backgroundImage: `url("/assets/images/fairy3.png")`,
-            backgroundSize: '50% auto',
-            backgroundPosition: 'left center',
-            backgroundRepeat: 'no-repeat'
-          } as React.CSSProperties}
-        >
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              <div className="text-center lg:text-left bg-white/75 backdrop-blur-sm rounded-3xl p-8 sm:p-10 lg:p-12 shadow-xl border border-white/20">
-                       <h3 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-8 text-primary-black">
-                         CMS Approved Medicare Plans
-                       </h3>
-                       <p className="text-primary-gray leading-relaxed text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0">
-                         We are CMS approved and work exclusively with licensed Medicare Advantage and Part D plan providers 
-                         to ensure compliance with federal healthcare regulations. Our Medicare brokers are certified and 
-                         trained to help you navigate the complex world of prescription drug coverage, formularies, and 
-                         Medicare eligibility requirements. Every plan we offer meets CMS standards for Medicare beneficiaries, 
-                         ensuring you receive reliable, government-approved prescription drug coverage.
-                       </p>
-              </div>
-              <div className="bg-white rounded-2xl p-8 shadow-clean-lg">
-                <div className="text-center">
-                  <h4 className="font-heading font-semibold text-2xl mb-6 text-primary-black">Medicare Certifications</h4>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="font-medium">CMS Approved Plans</span>
-                      <span className="text-primary-green font-bold">✓ Verified</span>
-                    </div>
-                    <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="font-medium">Licensed Medicare Brokers</span>
-                      <span className="text-primary-green font-bold">✓ Certified</span>
-                    </div>
-                    <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="font-medium">Medicare Part D Network</span>
-                      <span className="text-primary-green font-bold">✓ Licensed</span>
-                    </div>
-                    <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="font-medium">HIPAA Compliant</span>
-                      <span className="text-primary-green font-bold">✓ Protected</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </div>
+    </>
   )
 }
