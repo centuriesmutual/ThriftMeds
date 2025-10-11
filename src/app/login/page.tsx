@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { EyeIcon, EyeSlashIcon, UserIcon, LockClosedIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -42,38 +43,38 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         {/* Logo */}
-        <div className="flex justify-center">
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="bg-primary-green text-white rounded-xl p-3 shadow-clean">
-              <span className="font-heading font-bold text-2xl">TM</span>
+        <div className="flex justify-center mb-8">
+          <Link href="/" className="flex items-center space-x-4 group">
+            <div className="relative w-16 h-16 rounded-2xl overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300">
+              <Image
+                src="/assets/logos/thriftlogo.png"
+                alt="ThriftMeds Logo"
+                fill
+                className="object-contain bg-white p-2"
+              />
             </div>
             <div>
-              <h1 className="font-heading font-bold text-3xl text-primary-black">ThriftMeds</h1>
+              <h1 className="font-heading font-bold text-3xl text-primary-black group-hover:text-primary-green transition-colors">
+                ThriftMeds
+              </h1>
               <p className="text-sm text-primary-gray font-medium">Affordable Medications</p>
             </div>
           </Link>
         </div>
-        
-        <h2 className="mt-6 text-center text-3xl font-heading font-bold text-primary-black">
-          Sign in to your account
-        </h2>
-        <p className="mt-2 text-center text-sm text-primary-gray">
-          Access your dashboard and medication information
-        </p>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow-clean sm:rounded-xl sm:px-10">
+        <div className="bg-white py-10 px-6 shadow-2xl rounded-3xl border border-gray-100 sm:px-10">
           <form className="space-y-6" onSubmit={handleLogin}>
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
                 Email address
               </label>
-              <div className="mt-1 relative">
+              <div className="relative">
                 <input
                   id="email"
                   name="email"
@@ -82,10 +83,10 @@ export default function LoginPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 pl-10 border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent"
+                  className="appearance-none block w-full px-4 py-3 pl-12 border border-gray-200 rounded-xl placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-primary-green transition-all duration-200 bg-gray-50 focus:bg-white"
                   placeholder="Enter your email"
                 />
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                   <UserIcon className="h-5 w-5 text-gray-400" />
                 </div>
               </div>
@@ -93,10 +94,10 @@ export default function LoginPage() {
 
             {/* Password Field */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="password" className="block text-sm font-semibold text-gray-700 mb-2">
                 Password
               </label>
-              <div className="mt-1 relative">
+              <div className="relative">
                 <input
                   id="password"
                   name="password"
@@ -105,15 +106,15 @@ export default function LoginPage() {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 pl-10 pr-10 border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent"
+                  className="appearance-none block w-full px-4 py-3 pl-12 pr-12 border border-gray-200 rounded-xl placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-primary-green transition-all duration-200 bg-gray-50 focus:bg-white"
                   placeholder="Enter your password"
                 />
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                   <LockClosedIcon className="h-5 w-5 text-gray-400" />
                 </div>
                 <button
                   type="button"
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center"
+                  className="absolute inset-y-0 right-0 pr-4 flex items-center hover:bg-gray-100 rounded-r-xl transition-colors"
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? (
@@ -134,13 +135,13 @@ export default function LoginPage() {
                   type="checkbox"
                   className="h-4 w-4 text-primary-green focus:ring-primary-green border-gray-300 rounded"
                 />
-                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-700">
+                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-600">
                   Remember me
                 </label>
               </div>
 
               <div className="text-sm">
-                <a href="#" className="font-medium text-primary-green hover:text-primary-lightGreen">
+                <a href="#" className="font-medium text-primary-green hover:text-primary-lightGreen transition-colors">
                   Forgot your password?
                 </a>
               </div>
@@ -148,21 +149,21 @@ export default function LoginPage() {
 
             {/* Error Message */}
             {error && (
-              <div className="bg-red-50 border border-red-200 rounded-lg p-3">
+              <div className="bg-red-50 border border-red-200 rounded-xl p-4">
                 <p className="text-sm text-red-600">{error}</p>
               </div>
             )}
 
             {/* Login Button */}
-            <div>
+            <div className="pt-2">
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-primary-green hover:bg-primary-lightGreen focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-green disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full flex justify-center py-4 px-4 border border-transparent rounded-xl shadow-lg text-base font-semibold text-white bg-primary-green hover:bg-primary-lightGreen focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-green disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 hover:shadow-xl transform hover:-translate-y-0.5"
               >
                 {isLoading ? (
                   <div className="flex items-center">
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
                     Signing in...
                   </div>
                 ) : (
@@ -173,22 +174,26 @@ export default function LoginPage() {
           </form>
 
           {/* Demo Credentials */}
-          <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <h3 className="text-sm font-medium text-blue-800 mb-2">Demo Login</h3>
-            <p className="text-xs text-blue-700 mb-2">
+          <div className="mt-8 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-5">
+            <h3 className="text-sm font-semibold text-blue-800 mb-3">Demo Login</h3>
+            <p className="text-xs text-blue-700 mb-3">
               You can login with any email and password combination:
             </p>
-            <div className="text-xs text-blue-600 space-y-1">
-              <p><strong>Email:</strong> demo@thriftmeds.com</p>
-              <p><strong>Password:</strong> password123</p>
+            <div className="text-xs text-blue-600 space-y-2">
+              <div className="bg-white rounded-lg p-2 border border-blue-100">
+                <p><strong>Email:</strong> demo@thriftmeds.com</p>
+              </div>
+              <div className="bg-white rounded-lg p-2 border border-blue-100">
+                <p><strong>Password:</strong> password123</p>
+              </div>
             </div>
           </div>
 
           {/* Sign Up Link */}
-          <div className="mt-6 text-center">
+          <div className="mt-8 text-center">
             <p className="text-sm text-gray-600">
               Don't have an account?{' '}
-              <a href="#" className="font-medium text-primary-green hover:text-primary-lightGreen">
+              <a href="#" className="font-semibold text-primary-green hover:text-primary-lightGreen transition-colors">
                 Contact support to create one
               </a>
             </p>
@@ -196,15 +201,15 @@ export default function LoginPage() {
         </div>
 
         {/* Footer Links */}
-        <div className="mt-8 text-center">
-          <div className="flex justify-center space-x-6 text-xs text-gray-500">
-            <Link href="/privacy-policy" className="hover:text-gray-700">
+        <div className="mt-10 text-center">
+          <div className="flex flex-wrap justify-center gap-6 text-xs text-gray-500">
+            <Link href="/privacy-policy" className="hover:text-gray-700 transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms-of-service" className="hover:text-gray-700">
+            <Link href="/terms-of-service" className="hover:text-gray-700 transition-colors">
               Terms of Service
             </Link>
-            <Link href="/medical-disclaimer" className="hover:text-gray-700">
+            <Link href="/medical-disclaimer" className="hover:text-gray-700 transition-colors">
               Medical Disclaimer
             </Link>
           </div>
