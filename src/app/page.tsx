@@ -59,7 +59,7 @@ export default function HomePage() {
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url("/assets/images/landscape.jpeg")`,
+              backgroundImage: `url("/assets/images/fields.jpeg")`,
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
               backgroundAttachment: 'fixed',
@@ -75,13 +75,13 @@ export default function HomePage() {
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:mt-0 py-0 sm:py-14 lg:py-20">
           <div className="text-center animate-fade-in-up flex flex-col justify-start sm:justify-center h-full">
-            {/* Round transparent background container */}
-            <div className="bg-black/20 backdrop-blur-sm rounded-3xl p-8 sm:p-10 lg:p-14 mx-auto max-w-6xl sm:max-w-5xl shadow-2xl border border-white/10">
-              <h1 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-5 sm:mb-7 text-white leading-tight" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6)' } as React.CSSProperties}>
+            {/* Gray see-through background container */}
+            <div className="bg-gray-800/60 backdrop-blur-none rounded-3xl p-8 sm:p-10 lg:p-14 mx-auto max-w-6xl sm:max-w-5xl shadow-lg border border-gray-600/30">
+              <h1 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-5 sm:mb-7 text-gray-100 leading-tight" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7)' } as React.CSSProperties}>
                 Medicare Part D
-                <span className="block text-white" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6)' } as React.CSSProperties}>Prescription Drug Plans</span>
+                <span className="block text-gray-50" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7)' } as React.CSSProperties}>Prescription Drug Plans</span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl mb-7 sm:mb-10 lg:mb-12 max-w-4xl mx-auto text-gray-200 leading-relaxed px-4" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5)' } as React.CSSProperties}>
+              <p className="text-base sm:text-lg md:text-xl mb-7 sm:mb-10 lg:mb-12 max-w-4xl mx-auto text-gray-100 leading-relaxed px-4" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8), 0 0 6px rgba(0,0,0,0.6)' } as React.CSSProperties}>
                 Find affordable Medicare Part D prescription drug coverage and pricing. 
                 Licensed Medicare brokers help you compare prescription drug costs.
               </p>
@@ -90,16 +90,16 @@ export default function HomePage() {
               <div className="flex flex-col gap-5 sm:gap-7 justify-center items-center px-4">
                 <button
                   onClick={handleCallHotline}
-                  className="bg-white text-primary-green px-6 sm:px-9 py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg hover:bg-gray-50 flex items-center justify-center space-x-2 sm:space-x-3 shadow-clean-lg w-full sm:w-auto max-w-sm transition-all duration-300 hover:scale-105"
+                  className="bg-white text-black px-6 sm:px-9 py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg hover:bg-gray-50 flex items-center justify-center space-x-2 sm:space-x-3 shadow-clean-lg w-full sm:w-auto max-w-sm transition-all duration-300 hover:scale-105"
                   style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.3)' } as React.CSSProperties}
                 >
                   <PhoneIcon className="h-5 w-5 sm:h-6 sm:w-6" />
                   <span>Call (800) 631-MEDS</span>
                 </button>
-                <div className="text-center text-white mt-3">
-                  <div className="text-sm sm:text-base text-gray-200 font-medium" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.7)' } as React.CSSProperties}>Licensed Medicare Brokers Available 7 days a week</div>
-                  <div className="font-semibold text-base sm:text-lg" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.7)' } as React.CSSProperties}>Mon-Fri: 8AM-8PM • Sat-Sun: 9AM-6PM</div>
-                  <div className="text-xs sm:text-sm text-gray-300 mt-2" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.6)' } as React.CSSProperties}>Medicare Part D Enrollment Assistance • CMS Approved Program</div>
+                <div className="text-center text-gray-100 mt-3">
+                  <div className="text-sm sm:text-base text-gray-100 font-medium" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' } as React.CSSProperties}>Licensed Medicare Brokers Available 7 days a week</div>
+                  <div className="font-semibold text-base sm:text-lg text-gray-50" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' } as React.CSSProperties}>Mon-Fri: 8AM-8PM • Sat-Sun: 9AM-6PM</div>
+                  <div className="text-xs sm:text-sm text-gray-200 mt-2" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.7)' } as React.CSSProperties}>Medicare Part D Enrollment Assistance • CMS Approved Program</div>
                 </div>
               </div>
             </div>
@@ -145,13 +145,18 @@ export default function HomePage() {
       {/* Features Section - Full Page Stacked */}
       <section className="bg-white">
         {/* Affordable Pricing Section */}
-        <div className="min-h-screen flex items-center bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+        <div 
+          className="min-h-screen flex items-center relative"
+          style={{
+            backgroundImage: `url("/assets/images/fairy1.png")`,
+            backgroundSize: '50% auto',
+            backgroundPosition: 'left center',
+            backgroundRepeat: 'no-repeat'
+          } as React.CSSProperties}
+        >
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              <div className="text-center lg:text-left">
-                <div className="bg-primary-green/10 rounded-2xl p-4 sm:p-6 w-16 h-16 sm:w-20 sm:h-20 mx-auto lg:mx-0 mb-6 sm:mb-8 flex items-center justify-center">
-                  <CurrencyDollarIcon className="h-8 w-8 sm:h-10 sm:w-10 text-primary-green" />
-                </div>
+              <div className="text-center lg:text-left bg-white/75 backdrop-blur-sm rounded-3xl p-8 sm:p-10 lg:p-12 shadow-xl border border-white/20">
                        <h3 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-8 text-primary-black">
                          Medicare Part D Drug Plans
                        </h3>
@@ -186,8 +191,16 @@ export default function HomePage() {
         </div>
 
         {/* Instant Information Section */}
-        <div className="min-h-screen flex items-center bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+        <div 
+          className="min-h-screen flex items-center relative"
+          style={{
+            backgroundImage: `url("/assets/images/fairy2.png")`,
+            backgroundSize: '50% auto',
+            backgroundPosition: 'right center',
+            backgroundRepeat: 'no-repeat'
+          } as React.CSSProperties}
+        >
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
               <div className="bg-gray-50 rounded-2xl p-8 shadow-clean-lg order-2 lg:order-1">
                 <div className="text-center">
@@ -212,10 +225,7 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-              <div className="text-center lg:text-left order-1 lg:order-2">
-                <div className="bg-primary-green/10 rounded-2xl p-4 sm:p-6 w-16 h-16 sm:w-20 sm:h-20 mx-auto lg:mx-0 mb-6 sm:mb-8 flex items-center justify-center">
-                  <ClockIcon className="h-8 w-8 sm:h-10 sm:w-10 text-primary-green" />
-                </div>
+              <div className="text-center lg:text-left order-1 lg:order-2 bg-white/75 backdrop-blur-sm rounded-3xl p-8 sm:p-10 lg:p-12 shadow-xl border border-white/20">
                        <h3 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-8 text-primary-black">
                          Medicare Enrollment Support
                        </h3>
@@ -232,13 +242,18 @@ export default function HomePage() {
         </div>
 
         {/* Trusted & Reliable Section */}
-        <div className="min-h-screen flex items-center bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+        <div 
+          className="min-h-screen flex items-center relative"
+          style={{
+            backgroundImage: `url("/assets/images/fairy3.png")`,
+            backgroundSize: '50% auto',
+            backgroundPosition: 'left center',
+            backgroundRepeat: 'no-repeat'
+          } as React.CSSProperties}
+        >
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              <div className="text-center lg:text-left">
-                <div className="bg-primary-green/10 rounded-2xl p-4 sm:p-6 w-16 h-16 sm:w-20 sm:h-20 mx-auto lg:mx-0 mb-6 sm:mb-8 flex items-center justify-center">
-                  <ShieldCheckIcon className="h-8 w-8 sm:h-10 sm:w-10 text-primary-green" />
-                </div>
+              <div className="text-center lg:text-left bg-white/75 backdrop-blur-sm rounded-3xl p-8 sm:p-10 lg:p-12 shadow-xl border border-white/20">
                        <h3 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-8 text-primary-black">
                          CMS Approved Medicare Plans
                        </h3>
